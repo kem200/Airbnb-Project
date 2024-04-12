@@ -1,0 +1,47 @@
+Table users {
+  id integer [primary key]
+  email string
+  firstName string
+  lastName string
+  username string
+  password string
+}
+
+Table spots {
+  id integer [primary key]
+  ownerId integer
+  address string
+  city string
+  state string
+  country string
+  lat decimal
+  lng decimal
+  name string
+  description string
+  price integer
+  previewImage string
+  avgRating decimal
+}
+
+Table reviews {
+  id integer [primary key]
+  userId integer
+  spotId integer
+  review string
+  stars integer
+}
+
+Table bookings {
+  id integer [primary key]
+  spotId integer
+  userId integer
+  startDate date
+  endDate date
+
+}
+
+Ref: users.id < spots.ownerId //one-to-many
+Ref: spots.id < bookings.spotId //one-to-many
+Ref: spots.id < reviews.spotId
+Ref: users.id < reviews.userId
+Ref: users.id < bookings.userId
