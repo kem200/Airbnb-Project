@@ -1,8 +1,8 @@
-# `<name of application here>`
+# `Airbnb`
 
 ## Database Schema Design
 
-![alt text](image-1.png)
+![alt text](image.png)
 
 ## API Documentation
 
@@ -50,7 +50,7 @@ Returns the information about the current user that is logged in.
 * Require Authentication: false
 * Request
   * Method: GET
-  * URL: /users
+  * URL: /session/users
   * Body: none
 
 * Successful Response when there is a logged in user
@@ -91,7 +91,7 @@ information.
 * Require Authentication: false
 * Request
   * Method: POST
-  * URL: /users/login
+  * URL: /login
   * Headers:
     * Content-Type: application/json
   * Body:
@@ -157,7 +157,7 @@ user's information.
 * Require Authentication: false
 * Request
   * Method: POST
-  * URL: /users/signup
+  * URL: /signup
   * Headers:
     * Content-Type: application/json
   * Body:
@@ -392,7 +392,7 @@ Creates and returns a new spot.
 * Require Authentication: true
 * Request
   * Method: POST
-  * URL: /users/spots
+  * URL: /spots
   * Headers:
     * Content-Type: application/json
   * Body:
@@ -466,7 +466,7 @@ Create and return a new image for a spot specified by id.
 * Require proper authorization: Spot must belong to the current user
 * Request
   * Method: PATCH
-  * URL: /users/spots/:id/images
+  * URL: /spots/:id/images
   * Headers:
     * Content-Type: application/json
   * Body:
@@ -512,7 +512,7 @@ Updates and returns an existing spot.
 * Require proper authorization: Spot must belong to the current user
 * Request
   * Method: PATCH
-  * URL: /users/spots/:ownerId
+  * URL: /spots/:ownerId
   * Headers:
     * Content-Type: application/json
   * Body:
@@ -598,7 +598,7 @@ Deletes an existing spot.
 * Require proper authorization: Spot must belong to the current user
 * Request
   * Method: DELETE
-  * URL: /users/spots/:ownerId
+  * URL: /spots/:ownerId
   * Body: none
 
 * Successful Response
@@ -745,7 +745,7 @@ Create and return a new review for a spot specified by id.
 * Require Authentication: true
 * Request
   * Method: POST
-  * URL: /users/spots/:id/reviews
+  * URL: /spots/:id/reviews
   * Headers:
     * Content-Type: application/json
   * Body:
@@ -823,7 +823,7 @@ Create and return a new image for a review specified by id.
 * Require proper authorization: Review must belong to the current user
 * Request
   * Method: POST
-  * URL: /users/reviews/:id
+  * URL: /reviews/:id
   * Headers:
     * Content-Type: application/json
   * Body:
@@ -880,7 +880,7 @@ Update and return an existing review.
 * Require proper authorization: Review must belong to the current user
 * Request
   * Method: PATCH
-  * URL: /users/reviews/:userId
+  * URL: /reviews/:userId
   * Headers:
     * Content-Type: application/json
   * Body:
@@ -946,7 +946,7 @@ Delete an existing review.
 * Require proper authorization: Review must belong to the current user
 * Request
   * Method: DELETE
-  * URL: /users/reviews/:userId
+  * URL: /reviews/:userId
   * Body: none
 
 * Successful Response
@@ -982,7 +982,7 @@ Return all the bookings that the current user has made.
 * Require Authentication: true
 * Request
   * Method: GET
-  * URL: /users/bookings/:userId
+  * URL: /bookings/:userId
   * Body: none
 
 * Successful Response
@@ -1272,7 +1272,7 @@ Delete an existing booking.
   Spot must belong to the current user
 * Request
   * Method: DELETE
-  * URL: /users/bookings/:userId
+  * URL: /bookings/:userId
   * Body: none
 
 * Successful Response
@@ -1321,7 +1321,7 @@ Delete an existing image for a Spot.
 * Require proper authorization: Spot must belong to the current user
 * Request
   * Method: DELETE
-  * URL: /users/spots/:ownerId/images
+  * URL: /spots/:ownerId/images
   * Body: none
 
 * Successful Response
@@ -1356,7 +1356,7 @@ Delete an existing image for a Review.
 * Require proper authorization: Review must belong to the current user
 * Request
   * Method: DELETE
-  * URL: /users/reviews/:userId/images
+  * URL: /reviews/:userId/images
   * Body: none
 
 * Successful Response
